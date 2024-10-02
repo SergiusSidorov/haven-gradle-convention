@@ -1,0 +1,28 @@
+[versions]
+
+# ---->> Library Versions ---->
+
+# <<---- Library Versons <<----
+
+# -----------------------------
+
+# ---->> Plugin Versions ---->>
+
+axion-release-plugin-version = "1.18.14"
+
+# <<---- Plugin versions <<----
+
+[libraries]
+
+[bundles]
+
+[plugins]
+
+# ---->> Gradle Plugins ---->>
+
+axion-release-plugin = { id = "pl.allegro.tech.build.axion-release", version.ref = "axion-release-plugin-version" }
+
+# <<---- Gradle Plugins <<----
+
+# ----------------------------
+
