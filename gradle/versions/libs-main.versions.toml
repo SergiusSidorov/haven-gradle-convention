@@ -25,3 +25,4 @@ axion-release-plugin = { id = "pl.allegro.tech.build.axion-release", version.ref
 # <<---- Gradle Plugins <<----
 
 # ----------------------------
+

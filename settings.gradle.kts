@@ -1,4 +1,16 @@
-rootProject.name = "Haven Gradle Convention Plugins"
+import kotlin.io.path.Path
+import kotlin.io.path.isDirectory
+import kotlin.io.path.listDirectoryEntries
+import kotlin.io.path.name
+
+rootProject.name = "haven-convention"
+
+Path("catalog").listDirectoryEntries()
+    .forEach { dir ->
+        if (dir.isDirectory()) {
+            include(":catalog:${dir.name}")
+        }
+    }
 
 dependencyResolutionManagement {
 

@@ -1,6 +1,33 @@
 plugins {
     `version-catalog`
+    `maven-publish`
     alias(libsMain.plugins.axion.release.plugin)
+}
+
+group = "com.haven.convention"
+project.version = scmVersion.version
+
+subprojects {
+    println("* " + project.name)
+
+    if (project.childProjects.isEmpty()) {
+        println("  --> apply common project settings...")
+
+        project.version = rootProject.version
+
+        var groupSuffix = ""
+
+        if (project.parent?.name == "catalog") {
+            groupSuffix = ".catalog"
+        }
+
+        group = "com.haven.convention$groupSuffix"
+
+        apply(plugin = "maven-publish")
+
+    } else {
+        println("  --> skipping group project...")
+    }
 }
 
 scmVersion {
@@ -31,10 +58,4 @@ scmVersion {
     hooks {
         pre("commit")
     }
-}
-
-project.version = scmVersion.version
-
-allprojects {
-    project.version = rootProject.version
 }
