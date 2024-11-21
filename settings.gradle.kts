@@ -5,12 +5,17 @@ import kotlin.io.path.name
 
 rootProject.name = "haven-convention"
 
-Path("catalog").listDirectoryEntries()
-    .forEach { dir ->
-        if (dir.isDirectory()) {
-            include(":catalog:${dir.name}")
+includeDir("catalog")
+includeDir("plugin")
+
+fun includeDir(dirName: String) {
+    Path(dirName).listDirectoryEntries()
+        .forEach { dir ->
+            if (dir.isDirectory()) {
+                include(":${dirName}:${dir.name}")
+            }
         }
-    }
+}
 
 dependencyResolutionManagement {
 

@@ -1,28 +1,36 @@
 [versions]
 
-# ---->> Library Versions ---->
+axion-release-plugin = "1.18.14"
 
-# <<---- Library Versons <<----
+checkstyle-tool = "10.20.1"
 
-# -----------------------------
+spotbugs-plugin = "6.0.26"
+spotbugs-tool = "4.8.6"
+spotbugs-findsecbugs-plugin = "1.13.0"
 
-# ---->> Plugin Versions ---->>
+pmd-tool = "7.7.0"
 
-axion-release-plugin-version = "1.18.14"
+jacoco-tool = "0.8.12"
 
-# <<---- Plugin versions <<----
+dependencycheck-plugin = "11.1.0"
 
 [libraries]
+
+checkstyle-tool = { group = "com.puppycrawl.tools", name = "checkstyle", version.ref = "checkstyle-tool" }
+
+spotbugs-tool = { group = "com.github.spotbugs", name = "spotbugs", version.ref="spotbugs-tool" }
+spotbugs-findsecbugs-plugin = { group = "com.h3xstream.findsecbugs", name = "findsecbugs-plugin", version.ref = "spotbugs-findsecbugs-plugin" }
+
+pmd-tool = { group = "net.sourceforge.pmd", name = "pmd", version.ref = "pmd-tool" }
+
+jacoco-tool = { group = "org.jacoco", name = "jacoco", version.ref = "jacoco-tool" }
 
 [bundles]
 
 [plugins]
 
-# ---->> Gradle Plugins ---->>
+axion-release-plugin = { id = "pl.allegro.tech.build.axion-release", version.ref = "axion-release-plugin" }
 
-axion-release-plugin = { id = "pl.allegro.tech.build.axion-release", version.ref = "axion-release-plugin-version" }
+spotbugs-plugin = { id = "com.github.spotbugs", version.ref = "spotbugs-plugin" }
 
-# <<---- Gradle Plugins <<----
-
-# ----------------------------
-
+dependencycheck-plugin = { id = "org.owasp.dependencycheck", version.ref = "dependencycheck-plugin" }

@@ -1,12 +1,13 @@
 import pl.allegro.tech.build.axion.release.domain.hooks.HookContext
 
 plugins {
+    base
     `version-catalog`
     `maven-publish`
     alias(libsMain.plugins.axion.release.plugin)
 }
 
-group = "com.haven.convention"
+group = "com.l13.haven.convention"
 project.version = scmVersion.version
 
 subprojects {
@@ -17,13 +18,7 @@ subprojects {
 
         project.version = rootProject.version
 
-        var groupSuffix = ""
-
-        if (project.parent?.name == "catalog") {
-            groupSuffix = ".catalog"
-        }
-
-        group = "com.haven.convention$groupSuffix"
+        group = "com.l13.haven.convention.${project.parent?.name}"
 
         apply(plugin = "maven-publish")
 
@@ -41,7 +36,7 @@ subprojects {
         }
 
     } else {
-        println("  --> skipping group project...")
+        println("  --> skipping group module...")
     }
 }
 

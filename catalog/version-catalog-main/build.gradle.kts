@@ -4,7 +4,7 @@ plugins {
 
 catalog {
     versionCatalog {
-        from(files("../../gradle/versions/libs-main.versions.toml"))
+        from(files("libs-main.versions.toml"))
     }
 }
 

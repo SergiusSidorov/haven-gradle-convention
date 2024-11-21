@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter xmlns="https://github.com/spotbugs/filter/3.0.0"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="https://github.com/spotbugs/filter/3.0.0 https://raw.githubusercontent.com/spotbugs/spotbugs/release-3.1/spotbugs/etc/findbugsfilter.xsd">
+
+    <Match>
+        <!-- EI: May expose internal representation by returning reference to mutable object -->
+        <BugPattern name="EI_EXPOSE_REP" />
+    </Match>
+    <Match>
+        <!-- EI2: May expose internal representation by incorporating reference to mutable object -->
+        <BugPattern name="EI_EXPOSE_REP2" />
+    </Match>
+<!--    <Match>-->
+<!--        &lt;!&ndash; Constrained method converts checked exception to unchecked &ndash;&gt;-->
+<!--        <BugPattern name="EXS_EXCEPTION_SOFTENING_NO_CHECKED" />-->
+<!--    </Match>-->
+<!--    <Match>-->
+<!--        &lt;!&ndash; Unconstrained method converts checked exception to unchecked &ndash;&gt;-->
+<!--        <BugPattern name="EXS_EXCEPTION_SOFTENING_NO_CONSTRAINTS" />-->
+<!--    </Match>-->
+<!--    <Match>-->
+<!--        &lt;!&ndash; Blob field in JPA entity classes are OK. &ndash;&gt;-->
+<!--        <Bug pattern="SE_BAD_FIELD" />-->
+<!--        <Field type="java.sql.Blob" />-->
+<!--    </Match>-->
+<!--    <Match>-->
+<!--        &lt;!&ndash; On enums equals is as good as == &ndash;&gt;-->
+<!--        <BugPattern name="SPP_EQUALS_ON_ENUM" />-->
+<!--    </Match>-->
+<!--    <Match>-->
+<!--        &lt;!&ndash; It can be easier to debug code with an extra local variable &ndash;&gt;-->
+<!--        <BugPattern name="USBR_UNNECESSARY_STORE_BEFORE_RETURN" />-->
+<!--    </Match>-->
+
+</FindBugsFilter>
