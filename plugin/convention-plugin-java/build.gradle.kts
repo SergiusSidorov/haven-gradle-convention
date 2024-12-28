@@ -18,8 +18,10 @@ fun toDependency(provider: Provider<PluginDependency>): String {
 gradlePlugin {
     plugins {
         register("JavaLibraryConventionPlugin") {
-            id = "haven.java-library"
+            displayName = "Convention Plugin for Java Library"
+            id = "com.l13.haven.convention.plugin.java-library"
             implementationClass = "com.l13.haven.convention.plugin.JavaLibraryConventionPlugin"
+            version = project.version
         }
     }
 }
