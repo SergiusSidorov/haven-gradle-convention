@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    api(project(":plugin:convention-plugin-common"))
+    implementation(project(":plugin:convention-plugin-common"))
 
     implementation(toDependency(libsMain.plugins.spotbugs.plugin))
     implementation(toDependency(libsMain.plugins.dependencycheck.plugin))

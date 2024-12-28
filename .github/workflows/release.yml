@@ -46,6 +46,5 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           RELEASED_VERSION: ${{ steps.release.outputs.released-version }}
         run: gh release create "v$RELEASED_VERSION" \
-          --repo="$GITHUB_REPOSITORY" \
           --title="v$RELEASED_VERSION" \
           --generate-notes
